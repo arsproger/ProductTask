@@ -14,7 +14,6 @@ public class ProductJdbc {
                     + "RANK() OVER (PARTITION BY p.product_category_id "
                     + "ORDER BY p.sales_count DESC, p.product_create_date DESC) AS rnk "
                     + "FROM products p "
-                    + "JOIN categories c ON p.product_category_id = c.id "
                     + "WHERE p.product_create_date > '2020-01-01') "
                     + "SELECT rp.id, rp.product_category_id, "
                     + "(SELECT count(*) FROM products p "
